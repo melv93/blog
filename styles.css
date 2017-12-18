@@ -1,15 +1,18 @@
+/* @import url(http://fonts.googleapis.com/css?family=Monterrat;400,700); */
+
 body {
   color: #555;
   margin: 0;
+  /* font-family: 'Monterrat', sans-serif; */
 }
 
 a {
-  color: #004aff;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  color: #0c840e;
+  color: #222;
 }
 
 p {
@@ -27,14 +30,9 @@ h1, h2, h3, h4 {
 }
 
 #header a {
-  color: white;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-}
-
-#header a:hover {
-  color: #222;
 }
 
 #header-title {
@@ -45,15 +43,53 @@ h1, h2, h3, h4 {
   padding-right: 50px;
 }
 
+#header-title h2 {
+  margin-top:0;
+  margin-bottom: 0;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 #header-nav {
   display: block;
   float: right;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 #header-nav li {
   display: inline;
   padding-left: 20px;
+}
+
+#links {
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  height: auto;
+  line-height: 650px;
+  background-color: maroon;
+  width:100%;
+}
+
+#links a {
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: 50%;
+  /* margin-top: 0; */
+}
+
+#leftlink {
+  background-color: #85d4d7;
+  float:left;
+}
+
+#rightlink {
+  background-color: #a4b8e8;
+  float:right;
 }
 
 .post, .about {
