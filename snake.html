@@ -8,7 +8,9 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="Libraries/p5.js"></script>
   <script src="Libraries/p5.dom.js"></script>
-  <script src="Libraries/p5.sound.js"></script>
+  <!-- <script src="Libraries/p5.sound.js"></script> -->
+  <script src="Snake/snakesketch.js"></script>
+  <script src="Snake/snake.js"></script>
 </head>
 
 <body>
@@ -28,31 +30,24 @@
     </div>
   </div>
 
-  <SCRIPT>
-    function passWord() {
-      var testV = 1;
-      var pass1 = prompt('Please Enter Your Password', ' ');
-      while (testV < 3) {
-        if (!pass1)
-          history.go(-1);
-        if (pass1.toLowerCase() == "blogpass101") {
-          window.open('blog.html');
-          break;
-        }
-        testV += 1;
-        var pass1 =
-          prompt('Access Denied - Password Incorrect, Please Try Again.', 'Password');
-      }
-      if (pass1.toLowerCase() != "password" & testV == 3)
-        history.go(-1);
-      return " ";
-    }
-  </SCRIPT>
-  <CENTER>
-    <FORM>
-      <input type="button" value="Enter Protected Area" onClick="passWord()">
-    </FORM>
-  </CENTER>
+  <div id="content">
+
+    <div class="post-container">
+      <div class="post">
+        <div class="post-author">
+          <img src="me.png">
+          <span>Melv</span>
+        </div>
+        <p class="post-date">18/12/17</p>
+        <h3 class="post-title">Snake</h3>
+        <div class="post-content">
+          <div id = "snakesketch-holder">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   <div id="footer">
     <div class="container">

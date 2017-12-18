@@ -4,7 +4,7 @@ var food;
 
 function setup() {
   var snakecanvas = createCanvas(600,600);
-  snakecanvas.parent('snakesketch-holder')
+  snakecanvas.parent('snakesketch-holder');
   s = new Snake();
   frameRate(10);
   pickLocation();
