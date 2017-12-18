@@ -1,1 +1,62 @@
+body {
+  color: #555;
+  margin: 0;
+}
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #222;
+}
+
+p {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  color: #333;
+}
+
+#header {
+  background-color: #1abc9c;
+  height: 150px;
+  line-height: 150px;
+}
+
+#header a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#header-title {
+  display: block;
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 50px;
+}
+
+#header-title h2 {
+  margin-top:0;
+  margin-bottom: 0;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#header-nav {
+  display: block;
+  float: right;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#header-nav li {
+  display: inline;
+  padding-left: 20px;
+}
