@@ -17,8 +17,8 @@ var currentWindowHeight;
 var textSlider;
 
 function setup() {
-  currentWindowHeight = windowHeight;
-  currentWindowWidth = windowWidth;
+  currentWindowHeight = windowHeight*0.5;
+  currentWindowWidth = windowWidth*0.5;
   var matrixcanvas = createCanvas(currentWindowWidth,currentWindowHeight);
   matrixcanvas.parent('matrixsketch-holder');
   rowsinput = createInput('3');
