@@ -62,10 +62,10 @@ function draw() {
   }
   if (notSquare) {
     let notSquareText = "You cannot find the inverse of a non-square matrix.";
-    text(notSquareText, lpos, tpos + 6*texts + 4*texts*currentrows);
+    text(notSquareText, lpos, tpos - 350 + 6*texts + 4*texts*currentrows);
   } else if (singular) {
     let singularText = "Determinant of M = 0 so M is singular.";
-    text(singularText, lpos, tpos + 6*texts + 4*texts*currentrows);
+    text(singularText, lpos, tpos - 350 + 6*texts + 4*texts*currentrows);
   }
   showBrackets(lpos, tpos - 350 + texts + 5, currentrows, currentcols)
 }
