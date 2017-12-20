@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Melv's Blog</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="Libraries/p5.js"></script>
+  <script src="Libraries/p5.dom.js"></script>
+  <script src="Pong/pongsketch.js"></script>
+  <script src="Pong/paddle.js"></script>
+  <script src="Pong/ball.js"></script>
+  <script src="Pong/gamefunctions.js"></script>
+  <script src="Pong/gameoptions.js"></script>
+  <script src="Pong/visualoptions.js"></script>
+  <script src="Pong/buttons.js"></script>
 </head>
 
 <body>
@@ -31,56 +40,13 @@
       <div class="post">
         <div class="post-author">
           <img src="me.png">
-          <span>Mr Martin</span>
+          <span>Melv</span>
         </div>
         <p class="post-date">20/12/17</p>
         <h3 class="post-title">Pong</h3>
         <div class="post-content">
-          <a href="pong.html"><img src="Pong/Pong.png"></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="post-container">
-      <div class="post">
-        <div class="post-author">
-          <img src="me.png">
-          <span>Mr Martin</span>
-        </div>
-        <p class="post-date">18/12/17</p>
-        <h3 class="post-title">Matrices</h3>
-        <div class="post-content">
-          <a href="matrices.html"><img src="Matrices/matrices.png"></a>
-          <br>
-          <a style="color:black" href="matrixsource.html">No CSS Link</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="post-container">
-      <div class="post">
-        <div class="post-author">
-          <img src="me.png">
-          <span>Mr Martin</span>
-        </div>
-        <p class="post-date">18/12/17</p>
-        <h3 class="post-title">Primes</h3>
-        <div class="post-content">
-          <a href="primes.html"><img src="Primes/primes.png"></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="post-container">
-      <div class="post">
-        <div class="post-author">
-          <img src="me.png">
-          <span>Melv</span>
-        </div>
-        <p class="post-date">18/12/17</p>
-        <h3 class="post-title">Snake</h3>
-        <div class="post-content">
-          <a href="snake.html"><img src = "Snake/snake.png"></a>
+          <div id = 'pongsketch-holder'>
+          </div>
         </div>
       </div>
     </div>

@@ -15,12 +15,15 @@ var char1 = "M";
 var currentWindowWidth;
 var currentWindowHeight;
 var textSlider;
+var matrixcanvas;
+var yoffset;
 
 function setup() {
-  currentWindowHeight = windowHeight;
-  currentWindowWidth = windowWidth;
-  var matrixcanvas = createCanvas(currentWindowWidth,currentWindowHeight);
+  currentWindowHeight = windowHeight*0.8;
+  currentWindowWidth = windowWidth*0.8;
+  matrixcanvas = createCanvas(currentWindowWidth,currentWindowHeight);
   matrixcanvas.parent('matrixsketch-holder');
+  yoffset = matrixcanvas.position().y
   rowsinput = createInput('3');
   colsinput = createInput('3');
   inpbutton = createButton("Create");
@@ -29,8 +32,7 @@ function setup() {
 }
 
 function reset() {
-  // texts = textSlider.value();
-  rowsinput.position(8*texts, 400);
+  rowsinput.position(8*texts, 100 + yoffset);
   rowsinput.size(texts*2 + 10, texts*2);
   rowsinput.style("font-size", texts + "px");
   rowsinput.style("textAlign", "CENTER");
@@ -50,11 +52,10 @@ function reset() {
 
 function draw() {
   background(200);
-  // textSlider.changed(reset);
   textSize(texts*2)
   fill(0);
-  text("x", lpos + rowsinput.width + 3, tpos - 350 - 2*(texts + 1.5));
-  text("M = ", lpos - 6*texts, tpos - 350 - texts + 5 + 2*texts * currentrows);
+  text("x", lpos + rowsinput.width + 3, tpos - 2*(texts + 1.5));
+  text("M = ", lpos - 6*texts, tpos - texts + 5 + 2*texts * currentrows);
   for (let i = 0; i < matrices.length; i++) {
     if (matrices[i] != null) {
       displaymatrix(matrices[i]);
@@ -62,12 +63,12 @@ function draw() {
   }
   if (notSquare) {
     let notSquareText = "You cannot find the inverse of a non-square matrix.";
-    text(notSquareText, lpos, tpos - 350 + 6*texts + 4*texts*currentrows);
+    text(notSquareText, lpos, tpos + 6*texts + 4*texts*currentrows);
   } else if (singular) {
     let singularText = "Determinant of M = 0 so M is singular.";
-    text(singularText, lpos, tpos - 350 + 6*texts + 4*texts*currentrows);
+    text(singularText, lpos, tpos + 6*texts + 4*texts*currentrows);
   }
-  showBrackets(lpos, tpos - 350 + texts + 5, currentrows, currentcols)
+  showBrackets(lpos, tpos + texts + 5, currentrows, currentcols)
 }
 
 function showBrackets(posx, posy, rows, cols) {
@@ -147,14 +148,14 @@ function displaymatrix(m) {
   for (let i = 0; i < m.length; i++) {
     for (let j = 0; j < m[0].length; j++) {
       let t = m[i][j].toFixed(2);
-      text(t, width*0.5 + lpos + i*texts*4, tpos - 350 + 1.5*texts + 5 + j*texts*4);
+      text(t, width*0.5 + lpos + i*texts*4, tpos + 1.5*texts + 5 + j*texts*4);
     }
   }
-  showBrackets(width*0.5 + lpos,tpos - 350 + texts + 5,m.length, m[0].length);
+  showBrackets(width*0.5 + lpos,tpos + texts + 5,m.length, m[0].length);
   textSize(2*texts);
-  text("M  = ", width*0.5 + lpos - 7*texts, tpos - 350 - texts + 5 + 2*texts * currentrows);
+  text("M  = ", width*0.5 + lpos - 7*texts, tpos - texts + 5 + 2*texts * currentrows);
   textSize(texts);
-  text("-1", width*0.5 + lpos - 5.3*texts, tpos - 350 - texts + 5 + 2*texts * currentrows);
+  text("-1", width*0.5 + lpos - 5.3*texts, tpos - texts + 5 + 2*texts * currentrows);
 }
 
 function matrixadd(m1, m2) {
