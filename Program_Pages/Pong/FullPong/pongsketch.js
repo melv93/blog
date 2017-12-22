@@ -17,6 +17,7 @@ function preload() {
 
 function setup() {
   pongCanvas = createCanvas(scrw,scrh);
+  pongCanvas.parent("fullpongsketch-holder");
   themeSound.setVolume(vol/2)
   themeSound.loop();
   fill(255);
