@@ -29,7 +29,6 @@ function draw() {
   threet();
   fivet();
   if (three || five) {
-    console.log("not testing", p, three, five);
   } else {
     testPrime();
   }
@@ -72,7 +71,6 @@ function fivet() {
 }
 
 function testPrime() {
-  console.log("testing", p)
   for (var i = 0; i < primes.length; i++) {
     var check = p/primes[i];
     if (check === floor(check)) {
