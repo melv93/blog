@@ -54,8 +54,8 @@ function draw() {
   background(200);
   textSize(texts*2)
   fill(0);
-  text("x", lpos + rowsinput.width + 3, tpos - 2*(texts + 1.5));
-  text("M = ", lpos - 6*texts, tpos - texts + 5 + 2*texts * currentrows);
+  text("x", lpos + rowsinput.width + 3, tpos - yoffset - 2*(texts + 1.5));
+  text("M = ", lpos - 6*texts, tpos - yoffset - texts + 5 + 2*texts * currentrows);
   for (let i = 0; i < matrices.length; i++) {
     if (matrices[i] != null) {
       displaymatrix(matrices[i]);
@@ -63,12 +63,12 @@ function draw() {
   }
   if (notSquare) {
     let notSquareText = "You cannot find the inverse of a non-square matrix.";
-    text(notSquareText, lpos, tpos + 6*texts + 4*texts*currentrows);
+    text(notSquareText, lpos, tpos - yoffset + 6*texts + 4*texts*currentrows);
   } else if (singular) {
     let singularText = "Determinant of M = 0 so M is singular.";
-    text(singularText, lpos, tpos + 6*texts + 4*texts*currentrows);
+    text(singularText, lpos, tpos - yoffset + 6*texts + 4*texts*currentrows);
   }
-  showBrackets(lpos, tpos + texts + 5, currentrows, currentcols)
+  showBrackets(lpos, tpos - yoffset + texts + 5, currentrows, currentcols)
 }
 
 function showBrackets(posx, posy, rows, cols) {
@@ -148,14 +148,14 @@ function displaymatrix(m) {
   for (let i = 0; i < m.length; i++) {
     for (let j = 0; j < m[0].length; j++) {
       let t = m[i][j].toFixed(2);
-      text(t, width*0.5 + lpos + i*texts*4, tpos + 1.5*texts + 5 + j*texts*4);
+      text(t, width*0.5 + lpos + i*texts*4, tpos - yoffset + 1.5*texts + 5 + j*texts*4);
     }
   }
-  showBrackets(width*0.5 + lpos,tpos + texts + 5,m.length, m[0].length);
+  showBrackets(width*0.5 + lpos, tpos - yoffset + texts + 5,m.length, m[0].length);
   textSize(2*texts);
-  text("M  = ", width*0.5 + lpos - 7*texts, tpos - texts + 5 + 2*texts * currentrows);
+  text("M  = ", width*0.5 + lpos - 7*texts, tpos - yoffset - texts + 5 + 2*texts * currentrows);
   textSize(texts);
-  text("-1", width*0.5 + lpos - 5.3*texts, tpos - texts + 5 + 2*texts * currentrows);
+  text("-1", width*0.5 + lpos - 5.3*texts, tpos - yoffset - texts + 5 + 2*texts * currentrows);
 }
 
 function matrixadd(m1, m2) {
